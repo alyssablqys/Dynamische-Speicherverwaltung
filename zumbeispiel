@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+
+void main()
+{
+	int n;
+	do
+	{
+		cout << "Bitte Groesse angeben: ";
+		cin >> n;
+
+		//int feld[ANZ]//Feld statisch erzeugt
+
+		int* feld = NULL; //Zeiger auf Integer
+		feld = new int[n];
+
+		if (feld == NULL)
+		{
+			cout << "Fehler, nicht genug Speicher!" << endl;
+			return;
+		}
+
+		for (int i = 0;i < n;i++)
+		{
+			feld[i] = i;
+		}
+
+		for (int i = 0; i < n;i++)
+		{
+			cout << feld[i] << endl;
+		}
+
+		delete[]feld;
+
+	} while (true);
+	
+}
